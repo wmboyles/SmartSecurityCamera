@@ -4,12 +4,15 @@ from sendMail import sendMail
 from shutil import rmtree
 from os import listdir
 
+
+#Default values that should not change based on the day or user input
 fromAlias  = "Smart Security Program"
 fromAddr   = "myCamera@gmail.com" #not a real address. Use an existing account
 fromPW     = "A MAIL PASSWORD" #Password for account you use
 subject    = ""
 message    = ""
 folderList = []
+
 
 def runAllDays(toAddr, toAlias="User"):
     """

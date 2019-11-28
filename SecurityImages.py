@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 def calibrateMotionT(cam, t_min, initFrames):
     """
     Uses a small number of frames to calculate a baseline amount of motion.
@@ -60,8 +61,9 @@ def updateFrame(cam, t_prev, t, t_next):
 
 def diffImg(t_prev, t, t_next):
     """
-    Determines the amonnt of change (ie motion) from images in a feed using 3
-    images.
+    Determines the amonnt of change (ie motion) from images in a feed using 3 images.
+    This is consistent with other implementations, like in the below article:
+    https://www.pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/
     """
     
     diff1 = cv2.absdiff(t_next, t) #Difference between current and next frame

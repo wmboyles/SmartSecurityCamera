@@ -1,6 +1,7 @@
 from os import makedirs
 from time import sleep, strftime, localtime
 import cv2
+
 import SecurityImages
 
 def runtimeSetup(cam, vidWriter, date, framerate = 20.0, size = (640, 480), t_min = 100, initFrames = 100):
