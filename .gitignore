@@ -1,2 +1,2 @@
-./Faces/*
-./__pycache__
+Faces/
+__pycache__/
