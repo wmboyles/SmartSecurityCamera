@@ -10,9 +10,7 @@ storage space and taking advantage of computer vision technologies.
 You will need a system that has a camera and Python 3.x installed, along with the numpy and OpenCV libraries. 
 Further, OpenCV requires an additional contributions library to get the facial recognition working. This can be installed using pip
 like:
-<code>
-pip install opencv-contrib-python
-</code>
+<code> pip install opencv-contrib-python </code>
 
 ### Setup
 Once you have all of the dependencies, you simply need to download the files in this repository.
@@ -27,3 +25,8 @@ In the config.py file, enter the following information
 ### Execution
 Once you have installed all dependiencies and performed the setup, you are ready to run.
 Simply run the run.py file the same way you would run any other Python script.
+In Linux, this would be done in the terminal as
+<code> python3 run.py </code>
+
+### Possible Issues
+* **My camera isn't sending emails.** First try using a Gmail account for the camera to send reports. This account must have [two-factor authenication (2FA) turned off](https://myaccount.google.com/security), and must [allow less secure apps](https://myaccount.google.com/lesssecureapps?pli=1).
