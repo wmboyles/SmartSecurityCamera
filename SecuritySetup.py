@@ -32,9 +32,9 @@ def __makeDailyItems(vidWriter, today, framerate, size):
 
     try:
         print("No folder found. Making one...")
-        makedirs("Faces\\"+today)
+        makedirs("Faces/"+today)
     except OSError:
         print("Folder already found")
         pass
 
-    return cv2.VideoWriter("Faces\\"+today+"\\"+today+".avi", vidWriter, framerate, size)
+    return cv2.VideoWriter("Faces/"+today+"/"+today+".avi", vidWriter, framerate, size)

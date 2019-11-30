@@ -43,7 +43,7 @@ def boxFaces(frame, faces, date, nowD, nowS):
     
     for (x,y,w,h) in faces:
         cv2.rectangle(frame, (x,y), (x+w,y+h), GREEN, 2)
-        cv2.imwrite("Faces\\"+date+"\\"+nowS+".jpg", frame)
+        cv2.imwrite("Faces/"+date+"/"+nowS+".jpg", frame)
         print("Face:",nowD)
 
 

@@ -22,7 +22,7 @@ def __initArgs(today):
     # Framerate that camera feed is displayed and evaluated. 
     FRAMERATE = 20.0
     # Size of image (width,height) evaluated and displayed
-    SIZE = (640,480)
+    SIZE = (640, 480)
 
     global DELTA_MOTION_T_PLUS, DELTA_MOTION_T_MINUS
     # Amount by which motion threshold is increased
@@ -83,7 +83,7 @@ def runDay(today):
 
         motion_t, contFrames, contFaces = __adjustMotionT(motion_t, contFrames, contFaces)
 
-        if motion >= motion_t:
+        if motion >= motion_t: # If there's motion above the threshold
             if contFrames < CONT_FRAMES_MAX: contFrames += 1
             
             

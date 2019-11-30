@@ -70,3 +70,4 @@ def diffImg(t_prev, t, t_next):
     diff2 = cv2.absdiff(t, t_prev) #Difference between previous and current frame
     andDiff = cv2.bitwise_and(diff1, diff2) #Bitwise and of differences
     return 32 * np.round(andDiff / 32) #Round minor differences off
+
