@@ -1,20 +1,12 @@
 from SecurityRunner import runDay
+import SecurityConfig
+
 from time import strftime, localtime
 from sendMail import sendMail
 from shutil import rmtree
 from os import listdir
 
-
-#Default values that should not change based on the day or user input
-fromAlias  = "Smart Security Program"
-fromAddr   = "myCamera@gmail.com" #not a real address. Use an existing account
-fromPW     = "A MAIL PASSWORD" #Password for account you use
-subject    = ""
-message    = ""
-folderList = []
-
-
-def runAllDays(toAddr, toAlias="User"):
+def runAllDays():
     """
     Calls a function that runs the security camera funtion once per day.
     This function will automatically exit once the day has changed, or if
@@ -48,17 +40,17 @@ def runAllDays(toAddr, toAlias="User"):
 Here is today's Smart Security Camera Report of {1} photos and {2} video.\n
 I'll keep a lookout for you!\n
 \n
--{3}""".format(toAlias,numItems-1,1, fromAlias)
+-{3}""".format(SecurityConfig.toAlias, numItems-1, 1, SecurityConfig.fromAlias)
         
         messageSent = sendMail(
-            fromAlias,  # From alias
-            fromAddr,   # From address
-            fromPW,     # Sender password
-            toAddr,     # To address
-            subject,    # Subject
-            message,    # Message Body
-            [],         # List of files to attach
-            folderList  # Folder to attach
+            SecurityConfig.fromAlias,   # From alias
+            SecurityConfig.fromAddr,    # From address
+            SecurityConfig.fromPass,    # Sender password
+            SecurityConfig.toAddr,      # To address
+            subject,                    # Subject
+            message,                    # Message Body
+            [],                         # List of files to attach
+            folderList                  # Folder to attach
         )
 
         # Delete the day's output if the message correctly sent. The .zip folder is automatically deleted by sendMail
@@ -73,4 +65,4 @@ I'll keep a lookout for you!\n
 
 
 if __name__ == '__main__':
-    runAllDays("recipient@email.com", "A. User") #recipient address, recipient nickname
+    runAllDays()

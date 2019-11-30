@@ -17,9 +17,12 @@ pip install opencv-contrib-python
 ### Setup
 Once you have all of the dependencies, you simply need to download the files in this repository.
 Smart Security Camera uses a email to send a certain email address surveillance data once per day.
-In the run.py file, enter in an email address and password in the fromAddr and fromPW fields. This is the account from which
-Smart Security Camera will send emails. Next, at the very bottom of the run.py file, enter an email address and name.
-This is the email address to which the Smart Security Camera will send data each day.
+In the config.py file, enter the following information
+* **fromAlias** This is from whom a recipient's inbox will say each daily report is from. You can leave it to the default "Smart Security Program" if you wish.
+* **fromAddr** This is the email address from which the camera will send daily reports. You must change this to an email address that exists and you own. Gmail addresses work best.
+* **fromPass** This is the password to the email account that the security camera will use to send daily reports. You much change this to be the password for the email entered in the fromAddr field.
+* **toAddr** This is the email address to which the camera will send daily reports. You much change this to an email address that exists.
+* **toAlias** This is the nickname that the camera will call the recipient of daily reports. You can leave it to the default "Camera User" if you wish.
 
 ### Execution
 Once you have installed all dependiencies and performed the setup, you are ready to run.
