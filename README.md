@@ -1,4 +1,4 @@
-# SmartSecurityCamera
+# Smart Security Camera
 
 ## About
 The Smart Security Camera is a physical tool written in Python using OpenCV.
