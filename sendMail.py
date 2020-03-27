@@ -49,7 +49,7 @@ def sendMail(alias, fromAddr, pw, toaddr, subject="", message="", AttchFileList=
         except FileNotFoundError:
             if input(AttchFile + " not found. Send Anyways (Y/N)?").lower() != "y":
                 print("Aborting Sending.")
-                return
+                return False
 
     # remove zip files that we just created and attached
     for AttchFolder in AttchFolderList:
@@ -66,7 +66,7 @@ def sendMail(alias, fromAddr, pw, toaddr, subject="", message="", AttchFileList=
         s.login(fromAddr, pw)
     except smtplib.SMTPAuthenticationError:
         print("Invalid username or password. Aborting Sending.")
-        return
+        return False
     
     # send the message via the server just set up.
     s.send_message(msg)
@@ -76,3 +76,4 @@ def sendMail(alias, fromAddr, pw, toaddr, subject="", message="", AttchFileList=
     s.quit()
 
     print("Message Sent.")
+    return True
